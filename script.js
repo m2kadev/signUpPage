@@ -199,6 +199,7 @@ nextBtns[4].addEventListener('click', (e) => {
         activeBox.classList.add('showBox')
         
         return userBox.innerHTML = `
+            <p class="user-logo"><i class="fa-brands fa-github"></i></p>
             <p class="intro">
                 HELLO <span class="user-data">${ userData[1] }</span> </br>
                 Welcome to github

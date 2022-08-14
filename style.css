@@ -32,8 +32,14 @@ body {
 }
 
 .nav h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #fff;
+    cursor: pointer;
+    transition: .1s ease;
+}
+
+.nav h1:hover {
+    color: #627597;
 }
 
 .nav-links {
@@ -121,6 +127,11 @@ body {
     line-height: 1.5rem;
     font-size: .9rem;
     word-spacing: .3rem;
+}
+
+.box-wrapper .user-logo {
+    color: #0969da;
+    font-size: 1.6rem;
 }
 
 .box {
