@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Signup</title>
+</head>
+<body>
+
+    <div class="nav">
+        <h1>Github</h1>
+        <div class="nav-links">
+            <a href="#">Already have an account?</a>
+            <a href="#">Sign in</a>
+        </div>
+    </div>
+
+
+    <!-- form section -->
+
+   <div class="form-wrapper">
+        <!-- Email -->
+        <div class="box-wrapper email showBox" id="email">
+        
+            <p class="intro">
+                Welcome to GitHub!<br>
+                Let’s begin the adventure
+            </p>
+        
+            <div class="box">
+                <p>Enter your email</p>
+                <div class="form-box">
+                    <input type="email" id="emailVal" class="input-text">
+                    <input class="submitBtn" type="button" value="continue" data-self="email" data-change="username">
+                </div>
+            </div>
+        
+        </div>
+        
+        <!-- User name -->
+        
+        <div class="box-wrapper username" id="username">
+        
+            <p class="intro">
+                Welcome to GitHub!<br>
+                Let’s begin the adventure
+            </p>
+        
+            <div class="box">
+                <p>Enter your username</p>
+                <div class="form-box">
+                    <input type="text" id="usernameVal" class="input-text">
+                    <input class="submitBtn" type="button" value="continue" data-self="username" data-change="dateOfBirth">
+                </div>
+            </div>
+        
+        </div>
+
+        <!-- Date of birth -->
+        
+        <div class="box-wrapper dateOfBirth" id="dateOfBirth">
+        
+            <p class="intro">
+                Welcome to GitHub!<br>
+                Let’s begin the adventure
+            </p>
+        
+            <div class="box">
+                <p>Enter your date of birth</p>
+                <div class="form-box">
+                    <input type="date" id="dateVal" class="input-text">
+                    <input class="submitBtn" type="button" value="continue" data-self="dateOfBirth" data-change="password">
+                </div>
+            </div>
+        
+        </div>
+
+        <!-- Password -->
+        
+        <div class="box-wrapper password" id="password">
+        
+            <p class="intro">
+                Welcome to GitHub!<br>
+                Let’s begin the adventure
+            </p>
+        
+            <div class="box">
+                <p>Enter your password</p>
+                <div class="form-box">
+                    <input type="password" id="passwordVal" class="input-text">
+                </div>
+                <p>Confirm password</p>
+                <div class="form-box">
+                    <input type="password" id="confirmVal" class="input-text">
+                    <input class="submitBtn" type="button" value="continue" data-self="password" data-change="option">
+                </div>
+                
+            </div>
+        
+        </div>
+
+        <!-- Option -->
+        
+        <div class="box-wrapper option" id="option">
+        
+            <p class="intro">
+                Welcome to GitHub!<br>
+                Let’s begin the adventure
+            </p>
+        
+            <div class="box">
+                <select id="job-select">
+                    <option value="">--Choose your job title--</option>
+                    <option value="Developer">Developer</option>
+                    <option value="Programmer">Programmer</option>
+                    <option value="Designer">Designer</option>
+                    <option value="Project Manager">Project Manager</option>
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                </select>
+                <input class="submitBtn" type="button" value="continue" data-self="option" data-change="userData">
+            </div>
+        
+        </div>
+
+        <!-- User Data -->
+
+        <div class="box-wrapper user-data" id="userData">
+            <!-- USER DATA -->
+        </div>
+
+        <!-- Alert box -->
+        
+        <div class="alertBox">
+            <p class="alertMessaage"></p>
+        </div>
+   </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
