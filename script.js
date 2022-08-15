@@ -9,8 +9,19 @@ const userBox = document.getElementById('userData')
 const alertBox = document.querySelector('.alertBox')
 let alertMessage = document.querySelector('.alertMessaage')
 const nextBtns = document.querySelectorAll('[data-change]')
+const intro = document.getElementById('intro')
 let currentDate = new Date()
 let currentYear = currentDate.getFullYear()
+
+
+let introText = `Welcome to GitHub! Let’s begin the adventure`
+
+for(let i = 0; i < introText.length; i++) {
+    let itv = 200 * i
+    setTimeout(() => {
+        intro.innerHTML += introText[i]
+    }, itv);
+}
 
 
 email.addEventListener('keyup', (e) => {
@@ -110,9 +121,8 @@ nextBtns[0].addEventListener('click', (e) => {
 
 nextBtns[1].addEventListener('click', (e) => {
     let nameVal = username.value
-    if (validateUsername(nameVal)) {
+    if (validateUsername(nameVal) && nameVal !== '') {
         userData.push(nameVal)
-        console.log(userData)
         let currentData = e.target.dataset.self
         let currentBox = document.getElementById(currentData)
         currentBox.classList.remove('showBox')
@@ -127,6 +137,7 @@ nextBtns[1].addEventListener('click', (e) => {
         setTimeout(() => {
             alertBox.classList.remove('showAlert')
         }, 3000)
+
     } else {
         return
     }
