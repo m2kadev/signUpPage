@@ -20,7 +20,11 @@ for(let i = 0; i < introText.length; i++) {
     let itv = 200 * i
     setTimeout(() => {
         intro.innerHTML += introText[i]
-    }, itv);
+    }, itv)
+}
+
+window.onload = function () {
+    email.focus()
 }
 
 
@@ -97,13 +101,13 @@ nextBtns[0].addEventListener('click', (e) => {
     let emailVal = email.value
     if (validateEmail(emailVal)) {
         userData.push(emailVal)
-        console.log(userData)
         let currentData = e.target.dataset.self
         let currentBox = document.getElementById(currentData)
         currentBox.classList.remove('showBox')
         let boxName = e.target.dataset.change
         let activeBox = document.getElementById(boxName)
         activeBox.classList.add('showBox')
+        username.focus()
 
     } else if (emailVal === '') {
         let errorMessage = 'You must fill this field'
@@ -129,6 +133,7 @@ nextBtns[1].addEventListener('click', (e) => {
         let boxName = e.target.dataset.change
         let activeBox = document.getElementById(boxName)
         activeBox.classList.add('showBox')
+        date.focus()
     } else if (nameVal === '') {
         let errorMessage = 'You must fill this field'
         alertMessage.innerHTML = errorMessage
@@ -168,6 +173,7 @@ nextBtns[2].addEventListener('click', (e) => {
         let boxName = e.target.dataset.change
         let activeBox = document.getElementById(boxName)
         activeBox.classList.add('showBox')
+        password.focus()
     }
 })
 
@@ -183,6 +189,7 @@ nextBtns[3].addEventListener('click', (e) => {
         let boxName = e.target.dataset.change
         let activeBox = document.getElementById(boxName)
         activeBox.classList.add('showBox')
+        jobTitle.focus()
     } else {
         let errorMessage = 'Password are not correct!'
         alertMessage.innerHTML = errorMessage
