@@ -13,8 +13,7 @@ const intro = document.getElementById('intro')
 let currentDate = new Date()
 let currentYear = currentDate.getFullYear()
 
-
-let introText = `Welcome to GitHub! Let’s begin the adventure`
+let introText = `Welcome to GitHub! \n Let’s begin the adventure`
 
 for(let i = 0; i < introText.length; i++) {
     let itv = 200 * i
@@ -26,7 +25,6 @@ for(let i = 0; i < introText.length; i++) {
 window.onload = function () {
     email.focus()
 }
-
 
 email.addEventListener('keyup', (e) => {
 
@@ -87,7 +85,6 @@ password.addEventListener('keyup', (e) => {
     let passwordVal = password.value
     if (validatePassword(passwordVal)) {
         alertBox.classList.remove('showAlert')
-
         return
     } else {
         let errorMessage = 'Password must contain : Capital Letter, Small Letter, Number, Special Character'
@@ -233,11 +230,16 @@ nextBtns[4].addEventListener('click', (e) => {
 
 
 const validateEmail = (email) => {
+    let emailString = String(email).toLowerCase()
+    let emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+    return emailPattern.test(emailString)
+
+    /*
     return String(email)
         .toLowerCase()
         .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        )
+            /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+        ) */
 }
 
 const validateUsername = (username) => {
@@ -245,5 +247,6 @@ const validateUsername = (username) => {
 }
 
 const validatePassword = (password) => {
-    return password.match(/^[a-zA-Z0-9!@#$%^&*]{8,16}$/)
+    return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/.test(password)
 }
+
