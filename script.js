@@ -9,6 +9,7 @@ const userBox = document.getElementById('userData')
 const alertBox = document.querySelector('.alertBox')
 let alertMessage = document.querySelector('.alertMessaage')
 const nextBtns = document.querySelectorAll('[data-change]')
+const prevBtns = document.querySelectorAll('#backArrow')
 const intro = document.getElementById('intro')
 let currentDate = new Date()
 let currentYear = currentDate.getFullYear()
@@ -81,7 +82,7 @@ date.addEventListener('keyup', e => {
 
 password.addEventListener('keyup', (e) => {
 
-    alertBox.style.bottom = '-80px'
+    alertBox.style.bottom = '-120px'
     let passwordVal = password.value
     if (validatePassword(passwordVal)) {
         alertBox.classList.remove('showAlert')
@@ -145,6 +146,18 @@ nextBtns[1].addEventListener('click', (e) => {
     }
 })
 
+//for all prev btns
+prevBtns.forEach(prevBtn => {
+    prevBtn.addEventListener('click', e => {
+        let currentData = e.target.dataset.prevself
+        let currentBox = document.getElementById(currentData)
+        currentBox.classList.remove('showBox')
+        let boxName = e.target.dataset.back
+        let activeBox = document.getElementById(boxName)
+        activeBox.classList.add('showBox')
+        email.focus()
+    })
+})
 
 nextBtns[2].addEventListener('click', (e) => {
     let dateVal = date.value
@@ -163,7 +176,6 @@ nextBtns[2].addEventListener('click', (e) => {
         return
     } else {
         userData.push(dateVal)
-        console.log(userData)
         let currentData = e.target.dataset.self
         let currentBox = document.getElementById(currentData)
         currentBox.classList.remove('showBox')
